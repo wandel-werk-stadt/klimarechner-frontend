@@ -1,0 +1,167 @@
+@use 'sass:color';
+@use 'sass:map';
+
+:root {
+
+    @each $key,
+    $value in $colors {
+        @if $key !='dark' {
+            @if type-of($value)=='map' {
+
+                @each $key2,
+                $value2 in $value {
+                    @if type-of($value2)=='map' {
+
+                        @each $key3,
+                        $value3 in $value2 {
+                            --k-color-#{$key}-#{$key2}-#{$key3}: #{$value3};
+                        }
+                    }
+
+                    @else {
+                        --k-color-#{$key}-#{$key2}: #{$value2};
+                    }
+                }
+            }
+
+            @else {
+                --k-color-#{$key}: #{$value};
+            }
+        }
+    }
+
+    @each $key,
+    $value in $bps {
+        --k-bp-#{$key}: #{$value};
+    }
+
+    accent-color: get-color('primary.600');
+
+    --scroll-bar-width: 9px;
+
+    --k-input-font-size: 1rem;
+    --k-input-font-size-small: 0.875rem;
+    --k-input-height: 2.25rem;
+    --k-key-height: 3rem;
+    --k-input-color: #{get-color('gray.900')};
+    --k-input-inactive-color: #{get-color('gray.200')};
+    --k-input-border-color: #{get-color('gray.300')};
+
+    --k-page-max-width: 1500px; //#{map.get($bps, '2xl')};
+
+    // --k-nav-height: 4.75rem;
+    // --k-grid-cols: 6;
+    --k-grid-gutter: 1.5rem;
+    --k-page-padding-x: .5rem;
+    --k-page-padding-y: 2.5rem;
+    --k-page-padding-y-half: calc(var(--k-page-padding-y) / 2);
+    --k-section-margin-y: 1.5rem;
+    // --k-break-out-max-width: 156.25rem;
+    --k-gap: 1.5rem;
+
+    @include bp-sm {
+        --k-grid-gutter: 2rem;
+        // --k-page-padding-x: .5rem;
+    }
+
+    @include bp-md {
+        // --k-grid-cols: 12;
+        --k-section-margin-y: 2.5rem;
+    }
+
+    @include bp-lg {
+        --k-grid-gutter: 2.5rem;
+        --k-page-padding-x: 2rem;
+    }
+
+    @include bp-xl {
+        --k-page-padding-x: 5rem;
+    }
+
+    @include bp-2xl {
+        --k-page-padding-x: 7.25rem;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    @include scroll-vertical-colored;
+    @include scroll-border;
+    @include font-base-styles;
+
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    color: var(--k-color-section-text);
+    background-color: var(--k-color-background-base);
+    transition: color .25s, background-color .25s;
+
+    --k-section-background-color: var(--k-color-section-base);
+    --k-section-border-color: var(--k-color-section-border);
+    --k-section-color: var(--k-color-section-text);
+    --k-section-description-color: var(--k-color-section-text-subtle);
+
+    &.body--dark {
+        color: var(--k-color-background-text);
+        background-color: var(--k-color-background-base);
+
+        @each $key,
+        $value in map.get($colors, 'dark') {
+
+            @if type-of($value)=='map' {
+
+                @each $key2,
+                $value2 in $value {
+                    @if type-of($value2)=='map' {
+
+                        @each $key3,
+                        $value3 in $value2 {
+                            --k-color-#{$key}-#{$key2}-#{$key3}: #{$value3};
+                        }
+                    }
+
+                    @else {
+                        --k-color-#{$key}-#{$key2}: #{$value2};
+                    }
+                }
+            }
+
+            @else {
+                --k-color-#{$key}: #{$value};
+            }
+        }
+    }
+}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+::selection {
+    color: get-color('primary.base-text');
+    background-color: get-color('primary.base');
+    text-shadow: none;
+}
+
+mark {
+    // padding: 0 0.25rem;
+    color: get-color('primary.base-text');
+    background-color: get-color('primary.base');
+    // @apply font-semibold;
+}
+
+.deactivated {
+    user-select: none;
+    pointer-events: none;
+}
+
+.overspread {
+    width: calc(100% + 6rem);
+    margin-left: -3rem;
+}

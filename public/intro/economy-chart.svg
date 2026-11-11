@@ -1,0 +1,36 @@
+<svg viewBox="0 0 331 105" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6 80a3 3 0 1 1 6 0v1H6v-1Z" fill="#0AB480"/>
+  <path d="M14 81a3 3 0 1 1 6 0h-6Z" fill="#73BCFF"/>
+  <path d="M36.5 79a3 3 0 1 1 6 0v2h-6v-2Z" fill="#0AB480"/>
+  <path d="M44.5 77a3 3 0 1 1 6 0v4h-6v-4Z" fill="#73BCFF"/>
+  <path d="M67 76a3 3 0 1 1 6 0v5h-6v-5Z" fill="#0AB480"/>
+  <path d="M75 79a3 3 0 1 1 6 0v2h-6v-2Z" fill="#73BCFF"/>
+  <path d="M97.5 62a3 3 0 1 1 6 0v19h-6V62Z" fill="#0AB480"/>
+  <path d="M105.5 77a3 3 0 1 1 6 0v4h-6v-4Z" fill="#73BCFF"/>
+  <path d="M128 50a3 3 0 1 1 6 0v31h-6V50Z" fill="#0AB480"/>
+  <path d="M136 75a3 3 0 1 1 6 0v6h-6v-6Z" fill="#73BCFF"/>
+  <path d="M158.5 39a3 3 0 1 1 6 0v42h-6V39Z" fill="#0AB480"/>
+  <path d="M166.5 72a3 3 0 1 1 6 0v9h-6v-9Z" fill="#73BCFF"/>
+  <path d="M189 32a3 3 0 1 1 6 0v49h-6V32Z" fill="#0AB480"/>
+  <path d="M197 75a3 3 0 1 1 6 0v6h-6v-6Z" fill="#73BCFF"/>
+  <path d="M219.5 10a3 3 0 1 1 6 0v71h-6V10Z" fill="#0AB480"/>
+  <path d="M227.5 68a3 3 0 1 1 6 0v13h-6V68Z" fill="#73BCFF"/>
+  <path d="M250 4a3 3 0 1 1 6 0v77h-6V4Z" fill="#0AB480"/>
+  <path d="M258 68a3 3 0 1 1 6 0v13h-6V68Z" fill="#73BCFF"/>
+  <path d="M280.5 7a3 3 0 1 1 6 0v74h-6V7Z" fill="#0AB480"/>
+  <path d="M288.5 70a3 3 0 1 1 6 0v11h-6V70Z" fill="#73BCFF"/>
+  <path d="M311 3a3 3 0 1 1 6 0v78h-6V3Z" fill="#0AB480"/>
+  <path d="M319 65a3 3 0 1 1 6 0v16h-6V65Z" fill="#73BCFF"/>
+  <path fill="#000" d="M0 81h331v1H0z"/>
+  <path d="M6 82h6v13a3 3 0 1 1-6 0V82Z" fill="#F87373"/>
+  <path d="M36.5 82h6v13a3 3 0 1 1-6 0V82Z" fill="#F87373"/>
+  <path d="M67 82h6v20a3 3 0 1 1-6 0V82Z" fill="#F87373"/>
+  <path d="M97.5 82h6v9a3 3 0 1 1-6 0v-9Z" fill="#F87373"/>
+  <path d="M128 82h6v6a3 3 0 1 1-6 0v-6Z" fill="#F87373"/>
+  <path d="M158.5 82h6v2a3 3 0 1 1-6 0v-2Z" fill="#F87373"/>
+  <path d="M189 82h6v1a3 3 0 1 1-6 0v-1Z" fill="#F87373"/>
+  <path d="M219.5 82h6v1a3 3 0 1 1-6 0v-1Z" fill="#F87373"/>
+  <path d="M250 82h6v2a3 3 0 1 1-6 0v-2Z" fill="#F87373"/>
+  <path d="M280.5 82h6v2a3 3 0 1 1-6 0v-2Z" fill="#F87373"/>
+  <path d="M311 82h6v3a3 3 0 1 1-6 0v-3Z" fill="#F87373"/>
+</svg>

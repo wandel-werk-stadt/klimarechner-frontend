@@ -1,0 +1,46 @@
+@import 'src/assets/tools.scss';
+
+.icon {
+    // --icon-transition-time: 0.25s;
+    --icon-color: inherit;
+    --icon-color-inactive: inherit;
+
+    position: relative;
+    display: inline-block;
+    width: 1rem;
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+    color: var(--icon-color);
+    transform-origin: center;
+    @include no-select;
+    @include aspect-ratio(1);
+
+    &.inactive {
+        opacity: 0.35;
+    }
+
+    &.broken {
+        border: 2px solid #f00;
+        border-radius: 50%;
+    }
+
+    svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        // transition: color var(--icon-transition-time);
+
+        // circle,
+        // rect,
+        // path {
+        //     transition: fill var(--icon-transition-time),
+        //         stroke var(--icon-transition-time),
+        //         fill-opacity var(--icon-transition-time),
+        //         stroke-opacity var(--icon-transition-time);
+        // }
+    }
+}

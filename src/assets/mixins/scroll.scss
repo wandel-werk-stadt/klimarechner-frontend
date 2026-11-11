@@ -1,0 +1,100 @@
+$box-radius: 0;
+$background-color: #fff;
+$bar-color: #000; //var(--k-color-primary-dark)
+
+@mixin scroll {
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        &:vertical {
+            width: var(--scroll-bar-width);
+        }
+
+        &:horizontal {
+            height: var(--scroll-bar-width);
+        }
+    }
+}
+
+@mixin scroll-colored($bg-color: $background-color, $color: $bar-color) {
+    @include scroll;
+    scrollbar-color: $color $bg-color;
+
+    scrollbar-base-color: $bg-color;
+    scrollbar-face-color: $color;
+    scrollbar-3dlight-color: $color;
+    scrollbar-highlight-color: $color;
+    scrollbar-track-color: $bg-color;
+    scrollbar-arrow-color: $color;
+    scrollbar-shadow-color: $color;
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $bg-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: $box-radius;
+        background-color: $color;
+        border-left: 0px solid $bg-color;
+        border-right: 0px solid $bg-color;
+    }
+}
+
+@mixin scroll-border {
+    &::-webkit-scrollbar {
+        &:vertical {
+            width: var(--scroll-bar-width);
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-left: 1px solid $background-color;
+        border-right: 1px solid $background-color;
+    }
+}
+
+@mixin scroll-vertical {
+    @include scroll;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+@mixin scroll-vertical-colored {
+    @include scroll-colored;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+@mixin scroll-horizontal {
+    @include scroll;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+@mixin scroll-horizontal-colored {
+    @include scroll-colored;
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+@mixin hide-scrollbars {
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        display: none;
+    }
+}
+
+@mixin show-scrollbars {
+    -ms-overflow-style: auto;
+
+    &::-webkit-scrollbar {
+        -webkit-appearance: auto;
+        display: block;
+    }
+}

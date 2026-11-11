@@ -1,0 +1,558 @@
+export default {
+    buildings: {
+        title: 'Gebäude',
+        field_groups: {
+            base_data: {
+                title: 'Basisdaten',
+                field_groups: {
+                    'inhabitants[k]': {
+                        title: 'Einwohner*innen/Mitarbeitende/Schüler*innen in 1.000',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 83200,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 44746,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 10735,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 1556,
+                            },
+                        },
+                    },
+                    'n_buildings[]': {
+                        title: 'Anzahl Gebäude',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 19273286,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 1986122,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 56498,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 128207,
+                            },
+                        },
+                    },
+                    'floor_area_per_building[qm]': {
+                        title: 'Geschossfläche pro Gebäude in qm',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 198,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 737,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 1843,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 337,
+                            },
+                        },
+                    },
+                },
+            },
+            demand: {
+                title: 'Bedarfsdaten',
+                field_groups: {
+                    'heat[k*W*h/qm/a]': {
+                        title: 'Heizbedarf in kWh/qm/a',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 114,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 96,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 50,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 96,
+                            },
+                        },
+                    },
+                    'hot_water_per_capita[k*W*h/a]': {
+                        title: 'WW-Bedarf pro Einwohner*in/Mitarbeiter*in/Schüler*in in kWh/a',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 1238,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 10,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0,
+                            },
+                        },
+                    },
+                    'energy_per_capita[k*W*h/a]': {
+                        title: 'Strombedarf pro Einwohner*in/Mitarbeiter*in/Schüler*in in kWh/a',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 1253,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 2058,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 50,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 2058,
+                            },
+                        },
+                    },
+                },
+            },
+            heat_types_areas: {
+                title: 'Flächenanteile Heizungsarten',
+                field_groups: {
+                    'oil_no_condensing[k*qm]': {
+                        title: 'Fläche mit Ölheizung ohne Brennwert/Niedertemperatur in 1.000 qm',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 448022,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 267238,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 31240,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 7886,
+                            },
+                        },
+                    },
+                    'oil_with_condensing[k*qm]': {
+                        title: 'Fläche mit Ölheizung mit Brennwert/Niedertemperatur in 1.000 qm',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 496858,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 52066,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0,
+                            },
+                        },
+                    },
+                    'gas[k*qm]': {
+                        title: 'Fläche mit Gasheizung in 1.000 qm',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 1885950,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 766857,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 15620,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 22629,
+                            },
+                        },
+                    },
+                    'heat_pump[k*qm]': {
+                        title: 'Fläche mit Wärmepumpe in 1.000 qm',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 106680,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0,
+                            },
+                            schools: {
+                                label: 'Schulen',
+                                value: 0,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0,
+                            },
+                        },
+                    } /*,
+                    "other[k*qm]": {
+                        "title": "Fläche mit andere Wärmequellen in 1.000 qm",
+                        "fields": {
+                            "private": {
+                                "label": "Wohnen",
+                                "value": 335.28
+                            },
+                            "industry": {
+                                "label": "GHD",
+                                "value": 116190
+                            },
+                            "schools": {
+                                "label": "Schulen",
+                                "value": 5207
+                            },
+                            "public": {
+                                "label": "Kommune",
+                                "value": 3429
+                            }
+                        }
+                    }*/,
+                },
+            },
+        },
+    },
+    mobility: {
+        title: 'Personenverkehr',
+        field_groups: {
+            cars: {
+                title: 'PKW',
+                field_groups: {
+                    'n_pkw[k]': {
+                        title: 'Anzahl PKW in 1.000',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 43085.218,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 4904.406,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 258.127,
+                            },
+                        },
+                    },
+                    'n_bev[k]': {
+                        title: 'Anzahl BEV in 1.000',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 0.276,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0.028,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0,
+                            },
+                        },
+                    },
+                    'kilometers_traveled[k*k*m]': {
+                        title: 'Fahrleistung pro PKW in 1.000',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 12.483,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 15.565,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 10.0,
+                            },
+                        },
+                    },
+                },
+            },
+            street_lighting: {
+                title: 'Strassenbeleuchtung',
+                field_groups: {
+                    street_lighting: {
+                        title: '',
+                        fields: {
+                            'n_lanterns[k]': {
+                                label: 'Anzahl Laternen in 1.000 _____',
+                                value: 9250,
+                            },
+                            'power_consumption_per_latern[k*W*h/a]': {
+                                label: 'Stromverbrauch pro Laterne in kWh/a',
+                                value: 432,
+                            },
+                            'other_costs_per_lantern[eur/a]': {
+                                label: 'Andere Kosten pro Laterne in Eur/a',
+                                value: 120,
+                            },
+                        },
+                    },
+                },
+            },
+            modal_split: {
+                title: 'Modal Split',
+                field_groups: {
+                    traffic_performance: {
+                        title: '',
+                        fields: {
+                            'traffic_performance[k*p*k*m/a]': {
+                                label: 'Verkehrsleistung in 1.000 pkm/EW/a',
+                                value: 14.976,
+                            },
+                        },
+                    },
+                    shares: {
+                        title: 'Anteile',
+                        fields: {
+                            'pedestrians[]': {
+                                label: 'zu Fuss',
+                                value: 0.029,
+                            },
+                            'bicycle[]': {
+                                label: 'Fahrrad',
+                                value: 0.032,
+                            },
+                            'public_transport[]': {
+                                label: 'ÖPNV',
+                                value: 0.145,
+                            },
+                            'car[]': {
+                                label: 'PKW',
+                                value: 0.736,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+    energy: {
+        title: 'Stromversorgung',
+        field_groups: {
+            solar_roof: {
+                title: 'PV auf Dach',
+                field_groups: {
+                    'roof_area[k*qm]': {
+                        title: 'Dachfläche in 1.000 qm',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 2442000,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 3402900,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 179100,
+                            },
+                        },
+                    },
+                    'solar_suitable_portion_of_roof_area[]': {
+                        title: 'PV tauglicher Anteil der Dachfläche',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 0.31,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0.31,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0.31,
+                            },
+                        },
+                    },
+                    'installed_power[M*Wp]': {
+                        title: 'Installierte Leistung in MWp',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 13903,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 19374,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 1020,
+                            },
+                        },
+                    },
+                    'self_consumption[]': {
+                        title: 'Eigenverbrauch PV auf Dach',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 0.25,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0.25,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0.25,
+                            },
+                        },
+                    },
+                },
+            },
+            solar_landscape: {
+                title: 'PV Freifläche',
+                field_groups: {
+                    'potential_area[ha]': {
+                        title: 'Freifläche potential fuer PV in Hekta',
+                        fields: {
+                            industry: {
+                                label: 'GHD',
+                                value: 1000000,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 3000000,
+                            },
+                        },
+                    },
+                    'solar_area[ha]': {
+                        title: 'Freifläche belegt mit PV in Hekta',
+                        fields: {
+                            industry: {
+                                label: 'GHD',
+                                value: 30000,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 10000,
+                            },
+                        },
+                    },
+                    'self_consumption[]': {
+                        title: 'Eigenverbrauch Solarstrom',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 0.3,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0.4,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0.1,
+                            },
+                        },
+                    },
+                },
+            },
+            direct_aquisition_renewable_energies: {
+                title: 'Direkter Zukauf EE',
+                field_groups: {
+                    'power[G*W*h]': {
+                        title: 'Direkt GWH',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 37200,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 34485,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 1815,
+                            },
+                        },
+                    },
+                    'price[eur/k*W*h]': {
+                        title: 'Preis in Euro/kWh',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 0.33,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0.23,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0.23,
+                            },
+                        },
+                    },
+                },
+            },
+            aquisition_power_mix: {
+                title: 'Zukauf Strom-Mix',
+                field_groups: {
+                    'aquisition_power_mix[eur/k*W*h]': {
+                        title: 'Zukauf Strommix in Eur/kWhk',
+                        fields: {
+                            private: {
+                                label: 'Wohnen',
+                                value: 0.33,
+                            },
+                            industry: {
+                                label: 'GHD',
+                                value: 0.23,
+                            },
+                            public: {
+                                label: 'Kommune',
+                                value: 0.23,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+}

@@ -1,0 +1,61 @@
+@mixin bp-sm {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin bp-md {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin bp-lg {
+    @media (min-width: 990px) {
+        @content;
+    }
+}
+
+@mixin bp-xl {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin bp-2xl {
+    @media (min-width: 1400px) {
+        @content;
+    }
+}
+
+@mixin bp-sm-only {
+    @media (min-width: 576px) and (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin bp-md-only {
+    @media (min-width: 768px) and (max-width: 989px) {
+        @content;
+    }
+}
+
+@mixin bp-lg-only {
+    @media (min-width: 990px) and (max-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin bp-xl-only {
+    @media (min-width: 1200px) and (max-width: 1399px) {
+        @content;
+    }
+}
+
+$bps: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 990px,
+    'xl': 1200px,
+    '2xl': 1400px,
+);

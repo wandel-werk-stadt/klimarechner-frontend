@@ -1,0 +1,40 @@
+@mixin print {
+    body {
+        width: 210mm;
+        background-color: #fff;
+
+        &.q-body--prevent-scroll {
+            position: static !important;
+        }
+
+        #app {
+            display: none;
+        }
+
+        .q-dialog {
+            position: static !important;
+            max-height: none !important;
+
+            .q-dialog__backdrop {
+                display: none !important;
+            }
+
+            .q-dialog__inner {
+                position: static !important;
+                padding: 0;
+            }
+        }
+
+        .q-card__section {
+            page-break-inside: avoid;
+        }
+    }
+}
+
+html.print {
+    @include print;
+}
+
+@media print {
+    @include print;
+}

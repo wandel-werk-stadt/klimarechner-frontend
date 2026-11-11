@@ -1,0 +1,78 @@
+@import './../mixins/breakpoints.scss';
+
+$column-count: (
+    'xs': 6,
+    'sm': 6,
+    'md': 12,
+    'lg': 12,
+    'xl': 12,
+    '2xl': 12,
+);
+
+.grid {
+    &-container {
+        display: grid;
+        grid-template-columns: repeat(var(--k-grid-cols), minmax(0, 1fr));
+        gap: var(--k-grid-gutter) var(--k-grid-gutter);
+        grid-auto-flow: row;
+    }
+
+    &-item {
+        @for $i from 1 through 6 {
+            &.span-#{$i} {
+                grid-column-end: span $i;
+            }
+
+            &.start-#{$i} {
+                grid-column-start: $i;
+            }
+
+            &.row-start-#{$i} {
+                grid-row-start: span $i;
+            }
+
+            &.row-span-#{$i} {
+                grid-row-end: span $i;
+            }
+        }
+
+        // &.align{
+        //     &-self
+        // }
+        @each $bp, $value in $bps {
+            @media (min-width: #{$value}) {
+                @for $i from 1 through map-get($column-count, $bp) {
+                    &.span-#{$bp}-#{$i} {
+                        grid-column-end: span $i;
+                    }
+
+                    &.start-#{$bp}-#{$i} {
+                        grid-column-start: $i;
+                    }
+
+                    &.row-start-#{$bp}-#{$i} {
+                        grid-row-start: span $i;
+                    }
+
+                    &.row-span-#{$bp}-#{$i} {
+                        grid-row-end: span $i;
+                    }
+                }
+            }
+        }
+    }
+
+    // @include bp-md {
+    //     &-item {
+    //         @for $i from 1 through 12 {
+    //             &.span-#{$i} {
+    //                 grid-column-end: span $i;
+    //             }
+
+    //             &.start-#{$i} {
+    //                 grid-column-start: $i;
+    //             }
+    //         }
+    //     }
+    // }
+}

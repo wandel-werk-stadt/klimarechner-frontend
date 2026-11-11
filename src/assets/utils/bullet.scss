@@ -1,0 +1,12 @@
+.bullet {
+    --bullet-color: --k-color-primary-base;
+    --bullet-size-i: var(--bullet-size, 1rem);
+    display: inline-block;
+    width: var(--bullet-size-i);
+    height: var(--bullet-size-i);
+    border: 1px solid #000;
+    // box-shadow: 0 0 0 0.75px #000;
+    border-radius: 50%;
+    user-select: none;
+    background-color: var(--bullet-color);
+}

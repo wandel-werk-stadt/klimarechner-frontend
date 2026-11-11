@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico?v3" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- HTML Meta Tags -->
+        <title>Klimarechner</title>
+        <meta
+            name="description"
+            content="Klimamassnahmen bringen Geld in die Stadtkasse: Berechnen Sie sektorenscharf wirtschaftliche Effekte von Klimaschutz fuer Ihre Kommune!"
+        />
+
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://klimarechner.ansvar.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Klimarechner" />
+        <meta
+            property="og:description"
+            content="Klimamassnahmen bringen Geld in die Stadtkasse: Berechnen Sie sektorenscharf wirtschaftliche Effekte von Klimaschutz fuer Ihre Kommune!"
+        />
+        <meta property="og:image" content="https://klimarechner.ansvar.com/share.jpg" />
+
+        <!-- Twitter Meta Tags -->
+        <meta property="twitter:domain" content="klimarechner.ansvar.com" />
+        <meta property="twitter:url" content="https://klimarechner.ansvar.com" />
+        <meta name="twitter:title" content="Klimarechner" />
+        <meta
+            name="twitter:description"
+            content="Klimamassnahmen bringen Geld in die Stadtkasse: Berechnen Sie sektorenscharf wirtschaftliche Effekte von Klimaschutz fuer Ihre Kommune!"
+        />
+        <meta name="twitter:image" content="https://klimarechner.ansvar.com/share.jpg" />
+
+        <link
+            rel="preload"
+            href="/fonts/Satoshi-Variable.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin
+        />
+
+        <style>
+            /**
+        * adjust with: font-variation-settings: 'wght' 900.0;
+        */
+            @font-face {
+                font-family: 'Satoshi';
+                src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+                    url('/fonts/Satoshi-Variable.woff') format('woff');
+                font-weight: 300 900;
+                font-display: swap;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                src: url('/fonts/LatoLatin-Medium.woff2') format('woff2'),
+                    url('/fonts/LatoLatin-Medium.woff') format('woff');
+                font-weight: 500;
+                font-display: swap;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'Lato';
+                src: url('/fonts/LatoLatin-Bold.woff2') format('woff2');
+                font-weight: 700;
+                font-display: swap;
+                font-style: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app-wrapper"></div>
+        <script type="module" src="/src/main.js"></script>
+    </body>
+</html>

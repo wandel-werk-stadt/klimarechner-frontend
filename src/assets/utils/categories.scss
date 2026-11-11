@@ -1,0 +1,11 @@
+.category {
+    @each $key, $value in map-get($colors, 'categories') {
+        @if type-of($value) == 'map' {
+            @each $key2, $value2 in $value {
+                &-#{$key}-#{$key2} {
+                    --category-color: #{$value2};
+                }
+            }
+        }
+    }
+}

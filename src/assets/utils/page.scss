@@ -1,0 +1,54 @@
+.page-section {
+    position: relative;
+    max-width: var(--k-page-max-width);
+    padding: var(--k-page-padding-y-half) var(--k-page-padding-x);
+    margin: 0 auto;
+
+    .background {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: 0;
+        display: none;
+        width: 100vw;
+        height: 100%;
+        background-color: var(--page-section-background-color, #fff);
+        transform: translate(-50%, 0);
+    }
+
+    .section-content {
+        position: relative;
+        z-index: 10;
+    }
+
+    &.has-background {
+        padding-bottom: var(--k-page-padding-y-half);
+        padding-top: var(--k-page-padding-y);
+
+        .background {
+            display: block;
+        }
+    }
+
+    &.seamless:first-child,
+    &.no-padding-top {
+        padding-top: 0;
+    }
+
+    &.seamless:last-child,
+    &.no-padding-bottom {
+        padding-bottom: 0;
+    }
+
+    &.no-padding-y {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .full-width {
+        position: relative;
+        width: 100vw;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}

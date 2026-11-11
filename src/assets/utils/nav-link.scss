@@ -1,0 +1,54 @@
+@import '../tools.scss';
+
+.nav-link {
+    --link-color: var(--k-color-primary-base);
+    --link-color-active: var(--k-color-primary-base);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.3s;
+    border-bottom: 2px solid transparent;
+    text-decoration: none;
+
+    color: var(--link-color);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0%;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+        opacity: 1;
+        transform: scalex(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s $ease-out-cubic;
+    }
+
+    &.active,
+    &.current-route:not(.ignore-current-route),
+    &:hover {
+        color: var(--link-color-active);
+
+        &::before {
+            background-color: currentColor;
+            opacity: 1;
+            transform: scalex(1);
+            transform-origin: bottom left;
+            transition: transform 0.3s $ease-out-cubic;
+        }
+    }
+
+    @media (hover: none) {
+        color: var(--link-color-active);
+
+        &::before {
+            background-color: currentColor;
+            opacity: 1;
+            transform: scalex(1);
+            transform-origin: bottom left;
+            transition: transform 0.3s $ease-out-cubic;
+        }
+    }
+}

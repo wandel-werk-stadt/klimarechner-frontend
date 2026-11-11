@@ -1,0 +1,131 @@
+@use 'sass:list';
+@use 'sass:math';
+@import './../settings/fonts.scss';
+
+$font-bps: (
+    xs md
+);
+
+body {
+    @include font-base-styles;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-black {
+    font-weight: 900;
+}
+
+@for $i from 1 through 5 {
+
+    h#{$i},
+    .h#{$i} {
+        @include font-style('xs', 'h' + $i );
+    }
+}
+
+@each $name,
+$definition in map-get($font-styles, 'xs') {
+    @if (list.index(h1 h2 h3 h4 h5 h6, $name)==null) {
+        .#{$name} {
+            @include font-style('xs', $name);
+        }
+    }
+}
+
+@each $bp,
+$value in $font-bps {
+    @if (map-get($font-styles, $bp) !=null) {
+        @media (min-width: #{$value}) {
+            @for $i from 1 through 5 {
+                $name: 'h'+$i;
+
+                h#{$i},
+                .#{$name} {
+                    @include font-style($bp, $name);
+                }
+            }
+
+            @each $name,
+            $definition in map-get($font-styles, $bp) {
+                @if (list.index(h1 h2 h3 h4 h5 h6, $name)==null) {
+                    .#{$name} {
+                        // @debug $size;
+                        // --k-font-#{$name}-size: #{math.div($size, 16) * 1rem};
+
+                        @include font-style($bp, $name);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// duplicate for css vars
+:root {
+
+    @each $key,
+    $value in $font-families {
+        --k-font-#{$key}: #{$value};
+    }
+
+    $bp: 'xs';
+
+    @for $i from 1 through 5 {
+        $name: 'h'+$i;
+        $size: map-get(get-font-style($bp, $name), 'size');
+
+        --k-font-#{$name}-size: #{($size / 16) * 1rem};
+    }
+
+    @each $name,
+    $definition in map-get($font-styles, $bp) {
+        @if (list.index(h0 h1 h2 h3 h4 h5 h6, $name)==null) {
+            $size: map-get(get-font-style($bp, $name), 'size');
+
+            @if ($size) {
+                --k-font-#{$name}-size: #{($size / 16) * 1rem};
+            }
+        }
+    }
+
+    @each $bp,
+    $value in $font-bps {
+        @if (map-get($font-styles, $bp) !=null) {
+            @media (min-width: #{$value}) {
+                @for $i from 1 through 5 {
+                    $name: 'h'+$i;
+                    $size: map-get(get-font-style($bp, $name), 'size');
+
+                    --k-font-#{$name}-size: #{($size / 16) * 1rem};
+                }
+
+                @each $name,
+                $definition in map-get($font-styles, $bp) {
+                    @if (list.index(h0 h1 h2 h3 h4 h5 h6, $name)==null) {
+                        $size: map-get(get-font-style($bp, $name), 'size');
+
+                        @if ($size) {
+                            --k-font-#{$name}-size: #{($size / 16) *
+ 1rem
+                        }
+
+                        ;
+                    }
+                }
+            }
+        }
+    }
+}
+}

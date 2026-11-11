@@ -1,0 +1,17 @@
+{
+  "name": "climcalc-core",
+  "collaborators": [
+    "Alexander Rathert (ALRA) <alex.rah@mailbox.org>"
+  ],
+  "version": "0.1.0",
+  "files": [
+    "climcalc_core_bg.wasm",
+    "climcalc_core.js",
+    "climcalc_core.d.ts"
+  ],
+  "module": "climcalc_core.js",
+  "types": "climcalc_core.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

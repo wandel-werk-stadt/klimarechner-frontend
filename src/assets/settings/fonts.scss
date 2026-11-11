@@ -1,0 +1,112 @@
+@use 'sass:list';
+@use 'sass:math';
+
+$font-primary: Satoshi, sans-serif;
+$font-numeric: Lato;
+$font-mono: monospace;
+
+$font-families: (
+    'primary': $font-primary,
+    'numeric': $font-numeric,
+    'mono': $font-mono,
+);
+
+$font-base-styles: (
+    'family': 'primary',
+    'size': 16,
+    'line-height': 1.3,
+    'weight': 400,
+);
+
+$font-styles: (
+    'xs': ('h1': ('size': 32,
+        ),
+        'h2': ('size': 28,
+        ), 'h3': ('size': 24,
+        ), 'h4': ('size': 22,
+        ), 'h5': ('size': 20,
+        ), 'h6': ('size': 18,
+        )),
+    'md': ('h1': ('size': 32,
+        ),
+        'h2': ('size': 28,
+        ),
+        'h3': ('size': 24,
+        ),
+        'h4': ('size': 22,
+        ),
+        'h5': ('size': 20,
+        ),
+        'h6': ('size': 18,
+        )),
+);
+
+@mixin font-calc-pixel-size($size, $line-height) {
+    font-size: ($size / 16) * 1rem;
+
+    @if ($line-height) {
+        @if ($line-height <=8 and $line-height - math.floor($line-height) > 0) {
+            line-height: $line-height;
+        }
+
+        @else {
+            line-height: ($line-height / $size);
+        }
+    }
+}
+
+@mixin font-family($type, $force: null) {
+    @if ($type and ($force or $type !=map-get($font-base-styles, 'family'))) {
+        font-family: map-get($font-families, $type);
+    }
+}
+
+@mixin font-weight($weight, $force: null) {
+    @if ($weight and ($force or $weight !=map-get($font-base-styles, 'weight'))) {
+        font-weight: $weight;
+    }
+}
+
+@mixin render-font-style($font-style, $force: null) {
+    @if ($font-style ==null) {
+        @error 'invalid font-size';
+    }
+
+    @each $key,
+    $value in $font-style {
+        @if (list.index(family weight size line-height, $key)==null) {
+            #{$key}: $value;
+        }
+    }
+
+    @include font-family(map-get($font-style, 'family'), $force);
+    @include font-weight(map-get($font-style, 'weight'), $force);
+
+    @if (map-get($font-style, 'size')) {
+        @include font-calc-pixel-size(map-get($font-style, 'size'),
+            map-get($font-style, 'line-height'));
+    }
+}
+
+@mixin font-base-styles() {
+    @include render-font-style($font-base-styles, true);
+}
+
+@function get-font-style($variant, $name) {
+    $variant-font-styles: map-get($font-styles, $variant);
+
+    @if ($variant-font-styles ==null) {
+        @warn 'invalid font-style variant: '+$variant;
+    }
+
+    $font-style: map-get($variant-font-styles, $name);
+    @return $font-style;
+}
+
+@mixin font-style($variant, $name) {
+    $font-style: get-font-style($variant, $name);
+
+    @if ($font-style !=null) {
+        @include render-font-style($font-style);
+    }
+}

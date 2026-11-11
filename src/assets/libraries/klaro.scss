@@ -1,0 +1,48 @@
+@import './../settings/fonts.scss';
+
+#klaro > .klaro {
+    @include font-base-styles;
+    --border-radius: 0;
+    // color:#fff;
+    --dark1: #fff;
+    --light1: #000;
+    --green1: var(--k-color-primary-base);
+    --button-text-color: var(--k-color-primary-base-text);
+
+    .cookie-modal .cm-btn.cm-btn-success,
+    .context-notice .cm-btn.cm-btn-success,
+    .cookie-notice .cm-btn.cm-btn-success {
+        background-color: #000;
+        padding: 0.4375rem 1.5rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: var(--k-font-text-size);
+        line-height: 1;
+    }
+
+    .cookie-notice:not(.cookie-modal-notice) {
+        border: 1px solid #000;
+        right: 1.5rem;
+        left: auto;
+        top: auto;
+        width: 460px;
+        max-width: calc(100vw - 2 * 1.5rem);
+
+        .cn-body {
+            .cn-ok {
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-end;
+            }
+
+            .cn-buttons {
+                width: auto;
+
+                button.cm-btn {
+                    width: auto;
+                }
+            }
+        }
+        // background-color: var(--k-color-gray-700);
+    }
+}
